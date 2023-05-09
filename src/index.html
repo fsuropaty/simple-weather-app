@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/dist/output.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+		/>
+		<title>Weather App</title>
+	</head>
+	<body
+		class="bg-cover bg-no-repeat bg-fixed bg-center flex items-center justify-center h-screen"
+		style="
+			background-image: url('https://source.unsplash.com/1920x1080/?Landscape');
+		"
+	>
+		<div class="w-full h-full bg-black absolute z-0 opacity-10"></div>
+		<div class="text-center z-10">
+			<h1 id="clock" class="font-bold text-6xl text-slate-50 mb-2"></h1>
+			<p id="date" class="font-bold text-2xl text-slate-50 mb-8"></p>
+			<p
+				class="font-bold text-4xl text-slate-50 font-montserrat mb-1"
+				id="temperature"
+			>
+				--
+			</p>
+			<p id="weather" class="font-bold text-2xl text-slate-50 mb-8">--</p>
+			<p id="city" class="font-bold text-4xl text-slate-50">--</p>
+		</div>
+
+		<div>
+			<dialog
+				id="dialog"
+				class="rounded-lg bg-slate-50/75 backdrop-blur-xl text-slate-800 w-96 p-8 animate-fade-in"
+			>
+				<p class="mb-5 text-center text-xl font-bold text-slate-800">
+					Pengaturan
+				</p>
+				<form id="form">
+					<div class="mb-3">
+						<label class="font-semibold text-lg">Provinsi </label>
+						<div class="mt-2">
+							<select
+								name=""
+								id="pilih-provinsi"
+								class="w-full bg-transparent appearance-none border-b-2 p-2 hover:border-b-sky-500 transition"
+							>
+								<option id="provinsi ">Pilih Provinsi...</option>
+							</select>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label class="font-semibold text-lg">Kota </label>
+						<div class="mt-2">
+							<select
+								name=""
+								id="pilih-kota"
+								class="w-full bg-transparent appearance-none border-b-2 p-2 hover:border-b-sky-500 transition"
+							>
+								<option value="">Pilih Kota ...</option>
+							</select>
+						</div>
+					</div>
+					<div class="flex mt-5">
+						<button
+							id="terapkan"
+							class="w-1/2 p-2 bg-sky-400 rounded-lg text-slate-50 font-semibold hover:bg-sky-500"
+						>
+							Terapkan
+						</button>
+						<button formmethod="dialog" class="w-1/2 font-semibold">
+							Tutup
+						</button>
+					</div>
+				</form>
+			</dialog>
+		</div>
+
+		<div>
+			<button
+				id="settings"
+				class="absolute top-8 right-8 rounded-full w-10 h-10 flex text-center justify-center p-2"
+			>
+				<span
+					class="material-symbols-outlined text-slate-50 hover:animate-spin"
+				>
+					settings
+				</span>
+			</button>
+		</div>
+	</body>
+	<script src="app.js"></script>
+</html>
