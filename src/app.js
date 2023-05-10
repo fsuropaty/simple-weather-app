@@ -4,6 +4,7 @@ const settingsEl = document.getElementById("settings")
 const pilihProvinsiEl = document.getElementById("pilih-provinsi")
 const pilihKotaEl = document.getElementById("pilih-kota")
 const weatherEl = document.getElementById("weather")
+const waktuDataEl = document.getElementById("waktu-data")
 const dialog = document.getElementById("dialog")
 const terapkan = document.getElementById("terapkan")
 
@@ -98,16 +99,28 @@ async function fetchingData(province, city) {
 	)
 		.then((response) => response.json())
 		.then((data) => {
-			const temperature = data.data.params[5].times[11].celcius.replace(
+			const temperature = data.data.params[5].times[7].celcius.replace(
 				" ",
 				" °"
 			)
-			const weather = data.data.params[6].times[11].name
+			const weather = data.data.params[6].times[7].name
 			const city = data.data.description
+			const dateTime = data.data.params[6].times[7].datetime
+			const fDateTime =
+				dateTime.slice(6, 8) +
+				"-" +
+				dateTime.slice(4, 6) +
+				"-" +
+				dateTime.slice(0, 4) +
+				" " +
+				dateTime.slice(8, 10) +
+				":" +
+				dateTime.slice(10)
 
 			cityEl.innerHTML = city
 			temperatureEl.innerHTML = temperature
 			weatherEl.innerHTML = weather
+			waktuDataEl.innerHTML = `Waktu Data : ${fDateTime}`
 		})
 		.catch((error) => {
 			console.error("Error fetching JSON data:", error)

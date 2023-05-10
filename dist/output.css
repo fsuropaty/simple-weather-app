@@ -534,6 +534,14 @@ video {
   top: 2rem;
 }
 
+.bottom-8 {
+  bottom: 2rem;
+}
+
+.left-8 {
+  left: 2rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -723,6 +731,10 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .text-slate-50 {
