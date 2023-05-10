@@ -23,7 +23,10 @@
 			background-image: url('https://source.unsplash.com/1920x1080/?Landscape');
 		"
 	>
-		<div class="w-full h-full bg-black absolute z-0 opacity-10"></div>
+		<!-- Dimmed Layer -->
+		<div class="w-full h-full bg-black absolute z-0 opacity-20"></div>
+
+		<!-- Clock, Date, Temperature, Weather, and City -->
 		<div class="text-center z-10">
 			<h1 id="clock" class="font-bold text-6xl text-slate-50 mb-2"></h1>
 			<p id="date" class="font-bold text-2xl text-slate-50 mb-8"></p>
@@ -37,6 +40,7 @@
 			<p id="city" class="font-bold text-4xl text-slate-50">--</p>
 		</div>
 
+		<!-- Dialog Modal Settings -->
 		<div>
 			<dialog
 				id="dialog"
@@ -87,7 +91,10 @@
 		</div>
 
 		<div>
-			<p id="waktu-data" class="absolute bottom-8 left-8 text-slate-50"></p>
+			<p
+				id="waktu-data"
+				class="absolute bottom-8 left-8 text-slate-50 text-xs md:text-sm"
+			></p>
 		</div>
 
 		<div>
